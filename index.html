@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Emotion Face Builder</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="app">
+    <section class="card">
+      <h1>Build a Feeling Face</h1>
+      <p class="subtitle">
+        Students shape the face instead of selecting a label. Adjust the controls, change the face color, then download a short animated video of the face.
+      </p>
+
+      <div class="face-stage">
+        <div class="face-wrap">
+          <div class="face" id="face">
+            <div class="cheek cheek-left" id="cheekLeft"></div>
+            <div class="cheek cheek-right" id="cheekRight"></div>
+
+            <div class="eyebrow eyebrow-left" id="browLeft"></div>
+            <div class="eyebrow eyebrow-right" id="browRight"></div>
+
+            <div class="eye eye-left">
+              <div class="eye-lid" id="lidLeft"></div>
+              <div class="pupil" id="pupilLeft"></div>
+            </div>
+
+            <div class="eye eye-right">
+              <div class="eye-lid" id="lidRight"></div>
+              <div class="pupil" id="pupilRight"></div>
+            </div>
+
+            <div class="mouth" id="mouth"></div>
+          </div>
+        </div>
+
+        <div class="mood-readout">
+          <span class="label">Face vibe:</span>
+          <span class="mood-name" id="moodName">Calm</span>
+        </div>
+      </div>
+
+      <div class="controls">
+        <label for="faceColor">
+          <span>Face color</span>
+          <input type="color" id="faceColor" value="#ffd84d" />
+          <small>Choose any face color</small>
+        </label>
+
+        <label for="mouthCurve">
+          <span>Mouth curve</span>
+          <input type="range" id="mouthCurve" min="-100" max="100" value="10" />
+          <small>Sad ⟵ ⟶ Happy</small>
+        </label>
+
+        <label for="eyeOpen">
+          <span>Eye openness</span>
+          <input type="range" id="eyeOpen" min="10" max="100" value="70" />
+          <small>Sleepy ⟵ ⟶ Wide awake</small>
+        </label>
+
+        <label for="browTilt">
+          <span>Eyebrow tilt</span>
+          <input type="range" id="browTilt" min="-45" max="45" value="0" />
+          <small>Worried ⟵ ⟶ Curious</small>
+        </label>
+
+        <label for="blushLevel">
+          <span>Cheek warmth</span>
+          <input type="range" id="blushLevel" min="0" max="100" value="15" />
+          <small>No blush ⟵ ⟶ Bright blush</small>
+        </label>
+
+        <label for="lookDirection">
+          <span>Eye direction</span>
+          <input type="range" id="lookDirection" min="-100" max="100" value="0" />
+          <small>Looking left ⟵ ⟶ Looking right</small>
+        </label>
+
+        <label for="moveLevel">
+          <span>Movement level</span>
+          <input type="range" id="moveLevel" min="0" max="100" value="0" />
+          <small>Still ⟵ ⟶ Bouncy</small>
+        </label>
+      </div>
+
+      <div class="actions">
+        <button id="randomBtn" type="button">Random Face</button>
+        <button id="resetBtn" type="button">Reset</button>
+        <button id="downloadVideoBtn" type="button">Download as Video</button>
+      </div>
+
+      <p class="video-note" id="videoNote">
+        The video export records a short 3-second animation as a WebM file.
+      </p>
+
+      <canvas id="exportCanvas" width="600" height="600" aria-hidden="true"></canvas>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
